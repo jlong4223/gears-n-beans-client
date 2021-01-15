@@ -1,24 +1,35 @@
-# gears-nbeans-client
+# Gears N' Beans
+
+This is a website for a company that sells coffee products and offers bike services. The user can view the products, services and learn more about the company. <em>This is not a real company.</em>
+
+## Technologies Used:
+
+VENM Stack project
+
+- Vue.js (Vue 3)
+- Express.js
+- MongoDB
+- Node.js
+- Vue Router
+- NPM
+- React.js
+- AJAX
+- CSS3
+- HTML5
 
 ## Project setup
+
 ```
 yarn install
-```
-
-### Compiles and hot-reloads for development
-```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### Final App
+
+[Click Here]() for the deployed app
+
+<!-- ### Compiles and minifies for production
+
 ```
 yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+``` -->
