@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h1>Products</h1>
+    <div v-for="product in products" v-bind:key="product.id">
+      <h1>{{ product.name }}</h1>
+      <h2>{{ product.description }}</h2>
+      <h3>${{ product.price }}</h3>
+    </div>
   </div>
 </template>
 
@@ -9,6 +13,7 @@ const BASE_URL = "http://localhost:3001/";
 export default {
   name: "Products",
   data: () => ({
+    error: "",
     products: [],
   }),
   mounted() {
