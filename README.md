@@ -16,6 +16,7 @@ VENM Stack project
 - Javascript
 - AJAX
 - CSS3
+- Bootstrap
 - HTML5
 
 ## Project setup
