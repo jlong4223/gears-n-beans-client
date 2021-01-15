@@ -1,21 +1,23 @@
 <template>
   <div id="app">
-    <Products />
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/services">Services</router-link> |
+      <router-link to="/products">Products</router-link>
+    </div>
   </div>
+  <router-view />
 </template>
 
 <script>
-// imported components
-import Products from "./components/Products";
+// imported components go below this comment
 
-// defined variables for fetch
+// TODO - move the below data to the services component - defined variables for fetch
 const BASE_URL = "http://localhost:3001/";
 
 export default {
   name: "App",
-  components: {
-    Products,
-  },
+  components: {},
   data: () => ({
     error: "",
     products: [],
@@ -23,16 +25,11 @@ export default {
   }),
 
   mounted() {
-    fetch(BASE_URL + "products")
+    fetch(BASE_URL + "services")
       .then((res) => res.json())
       .then((results) => {
-        this.products = results;
-      }),
-      fetch(BASE_URL + "services")
-        .then((res) => res.json())
-        .then((results) => {
-          this.services = results;
-        });
+        this.services = results;
+      });
   },
   // methods are where CRUD routes go
   methods: {},
