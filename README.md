@@ -33,6 +33,7 @@ yarn serve
 ### Future Enhancements
 
 - Authentication
+- Meet our team page
   <!-- ### Compiles and minifies for production
 
 ```
