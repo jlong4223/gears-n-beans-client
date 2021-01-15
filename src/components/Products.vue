@@ -5,8 +5,20 @@
 </template>
 
 <script>
+const BASE_URL = "http://localhost:3001/";
 export default {
   name: "Products",
+  data: () => ({
+    products: [],
+  }),
+  mounted() {
+    fetch(BASE_URL + "products")
+      .then((res) => res.json())
+      .then((results) => {
+        this.products = results;
+      });
+  },
+  methods: {},
 };
 </script>
 
