@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <div>
     <div v-for="product in products" v-bind:key="product.id">
       <h1>{{ product.name }}</h1>
@@ -9,9 +10,13 @@
 </template>
 
 <script>
+import Navbar from "./Navbar";
 const BASE_URL = "http://localhost:3001/";
 export default {
   name: "Products",
+  components: {
+    Navbar,
+  },
   data: () => ({
     error: "",
     products: [],
