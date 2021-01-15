@@ -13,6 +13,7 @@ VENM Stack project
 - Vue Router
 - NPM
 - React.js
+- Javascript
 - AJAX
 - CSS3
 - HTML5
@@ -28,8 +29,11 @@ yarn serve
 
 [Click Here]() for the deployed app
 
-<!-- ### Compiles and minifies for production
+### Future Enhancements
+
+- Authentication
+  <!-- ### Compiles and minifies for production
 
 ```
 yarn build
-``` -->
+```
