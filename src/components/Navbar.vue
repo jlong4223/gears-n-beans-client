@@ -1,7 +1,9 @@
 <template>
   <div id="mainDiv">
     <div id="logo">
-      <img src="https://i.imgur.com/ryVp0LU.png" alt="logo" />
+      <router-link to="/">
+        <img src="https://i.imgur.com/ryVp0LU.png" alt="logo" />
+      </router-link>
     </div>
     <div id="nav">
       <router-link class="link" to="/">Home &nbsp; |</router-link>
