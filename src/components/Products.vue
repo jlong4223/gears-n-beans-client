@@ -1,9 +1,12 @@
 <template>
   <Navbar />
-  <div class="card_container">
+  <div>
+    <div class="card_container">
+      <h3>about area</h3>
+    </div>
     <div class="card_holder">
-      <div class="card_base">
-        <div v-for="product in products" v-bind:key="product.id">
+      <div v-for="product in products" v-bind:key="product.id">
+        <div class="card_base">
           <h1>{{ product.name }}</h1>
           <h2>{{ product.description }}</h2>
           <h3>${{ product.price }}</h3>
@@ -55,5 +58,24 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.card_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 500px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/05/empty-bikes.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+h3 {
+  text-align: center;
+  width: 700px;
+  background-color: transparent;
+  color: white;
+  font-size: 45px;
 }
 </style>
