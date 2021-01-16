@@ -9,6 +9,9 @@
         <div class="card_base">
           <h1>{{ product.name }}</h1>
           <h4>{{ product.description }}</h4>
+          <div>
+            <img :src="`${product.image}`" alt="pic" />
+          </div>
           <h4>${{ product.price }}</h4>
         </div>
       </div>
@@ -66,8 +69,8 @@ export default {
   align-items: center;
   border: 1px solid black;
   height: 500px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/05/empty-bikes.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://thumbs.dreamstime.com/b/various-home-made-produce-sale-empty-coffee-shop-cafe-bakery-johannesburg-south-africa-december-180640108.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -78,5 +81,8 @@ h2 {
   background-color: transparent;
   color: white;
   font-size: 45px;
+}
+img {
+  width: 250px;
 }
 </style>
