@@ -1,10 +1,14 @@
 <template>
   <Navbar />
-  <div>
-    <div v-for="product in products" v-bind:key="product.id">
-      <h1>{{ product.name }}</h1>
-      <h2>{{ product.description }}</h2>
-      <h3>${{ product.price }}</h3>
+  <div class="card_container">
+    <div class="card_holder">
+      <div class="card_base">
+        <div v-for="product in products" v-bind:key="product.id">
+          <h1>{{ product.name }}</h1>
+          <h2>{{ product.description }}</h2>
+          <h3>${{ product.price }}</h3>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -32,4 +36,24 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.card_base {
+  box-sizing: border-box;
+  width: 300px;
+  margin: 0 20px 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.card_holder {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+</style>
