@@ -8,8 +8,8 @@
       <div v-for="product in products" v-bind:key="product.id">
         <div class="card_base">
           <h1>{{ product.name }}</h1>
-          <h2>{{ product.description }}</h2>
-          <h3>${{ product.price }}</h3>
+          <h4>{{ product.description }}</h4>
+          <h4>${{ product.price }}</h4>
         </div>
       </div>
     </div>
@@ -71,7 +71,8 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
 }
-h3 {
+h3,
+h2 {
   text-align: center;
   width: 700px;
   background-color: transparent;
