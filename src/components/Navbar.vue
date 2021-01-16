@@ -5,7 +5,9 @@
     </div>
     <div id="nav">
       <router-link class="link" to="/">Home &nbsp; |</router-link>
-      <router-link class="link" to="/services">Services &nbsp; |</router-link>
+      <router-link class="link" to="/services"
+        >Bike Services &nbsp; |</router-link
+      >
       <router-link class="link" to="/products">Coffee Products</router-link>
     </div>
   </div>
@@ -32,7 +34,11 @@ img {
 }
 .link {
   margin: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
 }
+
 #mainDiv {
   margin-top: 10px;
 }
