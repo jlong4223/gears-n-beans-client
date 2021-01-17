@@ -12,6 +12,46 @@
       by experiencing it and drinking it together.
     </h3>
   </div>
+  <div class="images">
+    <div>
+      <img
+        src="https://e360.yale.edu/assets/site/_1500x1500_fit_center-center_80/GettyImages-1146667212_ColombiaCoffee_web.jpg"
+        alt="farm"
+      />
+    </div>
+    <div>
+      <img
+        src="https://grist.org/wp-content/uploads/2019/07/gettyimages-699105609-e1563570012920.jpg?w=1024&h=576&crop=1"
+        alt="farm"
+      />
+    </div>
+    <div>
+      <img
+        src="https://cdn.kimkim.com/files/a/content_articles/featured_photos/4ecb86cbc87f3f9504fffa1b94cf931693e4ab89/big-c3535b4050c2d49f330b0fd0b5b41cba.jpg"
+        alt="farm"
+      />
+    </div>
+  </div>
+  <div class="images">
+    <div>
+      <img
+        src="https://www.gettingstamped.com/wp-content/uploads/2013/10/Coffee-Farm-Work-Salento-Colombia-7.jpg"
+        alt="farm"
+      />
+    </div>
+    <div>
+      <img
+        src="https://fs.buttercms.com/resize=height:600/quality=v:80/auto_image/compress/Eee6jOhVT4SYGqnAOQbc"
+        alt="farm"
+      />
+    </div>
+    <div>
+      <img
+        src="https://cdn.theculturetrip.com/wp-content/uploads/2017/07/14726580846_5927dcbb2f_k.jpg"
+        alt="farm"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -69,5 +109,15 @@ h4 {
 .location {
   display: flex;
   justify-content: center;
+}
+img {
+  width: 300px;
+  border-radius: 5px;
+}
+.images {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
 }
 </style>

@@ -2,7 +2,10 @@
   <Navbar />
   <div>
     <div class="card_container">
-      <h3>about area</h3>
+      <h3>
+        At Gears N' Beans, our goal is to provide phenomenal coffees that are
+        traceable, transparent and consistent.
+      </h3>
     </div>
     <div class="card_holder">
       <div class="cardhere" v-for="product in products" v-bind:key="product.id">
@@ -74,7 +77,7 @@ export default {
   align-items: center;
   border: 1px solid black;
   height: 500px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://thumbs.dreamstime.com/b/various-home-made-produce-sale-empty-coffee-shop-cafe-bakery-johannesburg-south-africa-december-180640108.jpg");
   background-size: cover;
   background-repeat: no-repeat;
