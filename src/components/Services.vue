@@ -2,7 +2,9 @@
   <Navbar />
   <div>
     <div class="card_container">
-      <h3>about area</h3>
+      <h3>
+        {{ about }}
+      </h3>
     </div>
     <div class="card_holder">
       <div v-for="service in services" v-bind:key="service.id">
@@ -34,6 +36,7 @@ export default {
   data: () => ({
     error: "",
     services: [],
+    about: "Led by master mechanics, we can repair and build almost any bike.",
   }),
 
   mounted() {
@@ -96,5 +99,6 @@ h3 {
 
 img {
   width: 250px;
+  border-radius: 5px;
 }
 </style>
