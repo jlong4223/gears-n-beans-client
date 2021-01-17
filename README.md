@@ -23,6 +23,7 @@ VENM Stack project
 
 ```
 yarn install
+npm init
 yarn serve
 ```
 
@@ -34,6 +35,8 @@ yarn serve
 
 - Authentication
 - Meet our team page
+- Add to cart feature
+- Message company form
   <!-- ### Compiles and minifies for production
 
 ```
