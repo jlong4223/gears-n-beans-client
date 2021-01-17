@@ -18,15 +18,18 @@
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <script>
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 const BASE_URL = "http://localhost:3001/";
 export default {
   name: "Services",
   components: {
     Navbar,
+    Footer,
   },
   data: () => ({
     error: "",
