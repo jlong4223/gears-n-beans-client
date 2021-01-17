@@ -7,8 +7,9 @@
   </div>
   <div id="roast">
     <h3>
-      Our coffee is roasted in house. Our beans come from trusted farmers in
-      Colombia, Brazil, and Ethiopia
+      We directly source and roast elite coffees from around the world. We are
+      dedicated to bringing you closer to the journey and excitement of coffee
+      by experiencing it and drinking it together.
     </h3>
   </div>
 </template>
@@ -35,7 +36,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 500px;
 }
 h2 {
@@ -50,5 +51,23 @@ h3 {
   width: 700px;
   background-color: transparent;
   font-size: 35px;
+}
+h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  width: 150px;
+  height: 50px;
+  color: white;
+}
+#homeinfo {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.location {
+  display: flex;
+  justify-content: center;
 }
 </style>
