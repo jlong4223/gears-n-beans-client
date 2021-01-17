@@ -5,6 +5,12 @@
       have one of our trusted mechanics look over your bike.
     </h2>
   </div>
+  <div id="roast">
+    <h3>
+      Our coffee is roasted in house. Our beans come from trusted farmers in
+      Colombia, Brazil, and Ethiopia
+    </h3>
+  </div>
 </template>
 
 <script>
@@ -25,11 +31,24 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
 }
+#roast {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 500px;
+}
 h2 {
   text-align: center;
   width: 700px;
   background-color: transparent;
   color: white;
   font-size: 45px;
+}
+h3 {
+  text-align: center;
+  width: 700px;
+  background-color: transparent;
+  font-size: 35px;
 }
 </style>
