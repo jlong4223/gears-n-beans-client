@@ -48,10 +48,11 @@ export default {
 <style scoped>
 .card_base {
   box-sizing: border-box;
-  width: 350px;
+  width: 300px;
   margin: 0 20px 20px 0;
   padding: 15px;
   background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   object-fit: contain;
   display: flex;
@@ -76,6 +77,11 @@ export default {
     url("https://wpcdn.us-east-1.vip.tn-cloud.net/www.klkntv.com/content/uploads/2020/05/empty-bikes.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+h1,
+h4,
+h2 {
+  background-color: transparent;
 }
 h3 {
   text-align: center;
