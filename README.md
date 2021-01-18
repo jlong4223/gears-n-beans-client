@@ -17,17 +17,42 @@ VENM Stack project
 - AJAX
 - CSS3
 - Bootstrap
+- FontAwesome
 - HTML5
+- Heroku
 
-## Project setup
+<!-- ### Project setup
 
 ```
+npm init
+node server.js
+
+or
+
 yarn install
 npm init
 yarn serve
-```
+``` -->
 
-### Final App
+## Screenshots
+
+##### Home Page(top-portion)
+
+![home](./public/images/home.png)
+
+##### Home Page(bottom)
+
+![about](./public/images/about.png)
+
+##### Services & Footer
+
+![footer](./public/images/services-footer.png)
+
+##### Products
+
+![products](./public/images/products.png)
+
+## Final App
 
 [Click Here](https://gears-beans-client.herokuapp.com/) for the deployed app
 
