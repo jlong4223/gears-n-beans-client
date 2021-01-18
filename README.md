@@ -62,6 +62,7 @@ yarn serve
 - Meet our team page
 - Add to cart feature
 - Message company form
+- update sizing for phone screens
   <!-- ### Compiles and minifies for production
 
 ```
