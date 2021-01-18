@@ -12,6 +12,9 @@
       by experiencing it and drinking it together.
     </h3>
   </div>
+  <!-- <div>
+    <MapHolder />
+  </div> -->
   <div class="images">
     <div>
       <img
@@ -55,8 +58,12 @@
 </template>
 
 <script>
+// import MapHolder from "./MapHolder";
 export default {
   name: "About",
+  components: {
+    // MapHolder,
+  },
 };
 </script>
 
