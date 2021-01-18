@@ -26,7 +26,8 @@
 <script>
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-const BASE_URL = "http://localhost:3001/";
+// const BASE_URL = "http://localhost:3001/";
+const BASE_URL = "https://gearsbeans-api.herokuapp.com/";
 export default {
   name: "Products",
   components: {
