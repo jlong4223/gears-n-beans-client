@@ -29,7 +29,7 @@ yarn serve
 
 ### Final App
 
-[Click Here]() for the deployed app
+[Click Here](https://gears-beans-client.herokuapp.com/) for the deployed app
 
 ### Future Enhancements
 
