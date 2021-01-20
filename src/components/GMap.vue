@@ -42,7 +42,7 @@ export default {
       map.value = new window.google.maps.Map(mapDivRef.value, {
         mapTypeId: props.mapType || "hybrid",
         zoom: props.zoom || 8,
-        // disableDefaultUI: props.disableUI || false,
+        disableDefaultUI: props.disableUI || false,
         center: props.center || { lat: 30.2672, lng: 97.7431 },
       });
     };

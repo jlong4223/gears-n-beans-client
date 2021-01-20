@@ -60,8 +60,8 @@ yarn serve
 
 - Authentication
 - Meet our team page
-- Add to cart feature
-- Message company form
+- Add to cart feature (commerce.js)
+- Message company form (nodemailer)
 - update sizing for phone screens
   <!-- ### Compiles and minifies for production
 
