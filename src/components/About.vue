@@ -127,4 +127,16 @@ img {
   align-items: center;
   margin-bottom: 50px;
 }
+.images div {
+  margin: 5px;
+}
+
+@media screen and (max-width: 750px) {
+  .images {
+    flex-direction: column;
+  }
+  .images div {
+    margin-top: 10px;
+  }
+}
 </style>
