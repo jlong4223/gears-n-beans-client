@@ -20,7 +20,7 @@
           1111 Beans Dr. <br />
           Austin, TX 78745 <br />
           (111)-111-1111 <br />
-          gears@beans.com
+          <a :href="`mailto:gears@beans.com`">gears@beans.com</a>
         </p>
       </div>
       <div>
