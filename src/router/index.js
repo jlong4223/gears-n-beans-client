@@ -5,6 +5,7 @@ import Products from "@/components/Products.vue";
 import NotFound from "@/components/NotFound.vue";
 import CartCheckout from "@/components/CartCheckout.vue";
 import ThankYou from "@/components/ThankYou.vue";
+import Reviews from "@/components/Reviews.vue";
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: "/thank-you",
     name: "ThankYou",
     component: ThankYou,
+  },
+  {
+    path: "/reviews",
+    name: "Reviews",
+    component: Reviews,
   },
   {
     path: "/:catchAll(.*)",

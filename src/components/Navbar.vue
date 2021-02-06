@@ -10,7 +10,10 @@
       <router-link class="link" to="/services"
         >Bike Services &nbsp; |</router-link
       >
-      <router-link class="link" to="/products">Coffee Products</router-link>
+      <router-link class="link" to="/products"
+        >Coffee Products &nbsp; |</router-link
+      >
+      <router-link class="link" to="/reviews">Reviews</router-link>
     </div>
   </div>
 </template>
