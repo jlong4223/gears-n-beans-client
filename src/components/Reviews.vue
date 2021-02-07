@@ -7,34 +7,51 @@
       </h3>
     </div>
     <div>
-      <form class="mb-3">
+      <!-- @submit.prevent is preventDefault() -->
+      <form @submit="addReview" class="mb-3">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" />
+          <input
+            type="text"
+            class="form-control"
+            v-model="review.name"
+            id="name"
+          />
         </div>
         <div class="form-group">
           <label>Message</label>
-          <textarea class="form-control"></textarea>
+          <textarea
+            class="form-control"
+            v-model="review.message"
+            id="message"
+          ></textarea>
         </div>
         <div class="form-group">
           <label>Product(s)</label>
-          <input type="text" class="form-control" />
+          <input
+            type="text"
+            class="form-control"
+            v-model="review.product"
+            id="product"
+          />
         </div>
         <div class="form-group">
-          <label></label>
+          <label>Rating</label>
           <input
             type="number"
             max="5"
             min="1"
             class="form-control"
             placeholder="5"
+            v-model="review.stars"
+            id="stars"
           />
         </div>
         <button type="submit" class="btn btn-primary">Add Review</button>
       </form>
     </div>
+    <h2>Reviews:</h2>
     <div class="reviews">
-      <h2>Reviews:</h2>
       <div
         id="oneReview"
         v-for="review in reversedReviews"
@@ -63,6 +80,12 @@ export default {
   data: () => ({
     error: "",
     reviews: [],
+    review: {
+      name: "",
+      message: "",
+      product: "",
+      stars: 0,
+    },
     about: "Check out our reviews",
   }),
   //   using computed to define extra rules to the new copy of reviews data
@@ -77,6 +100,22 @@ export default {
       .then((results) => {
         this.reviews = results;
       });
+  },
+  methods: {
+    addReview() {
+      console.log(this.review);
+      fetch(BASE_URL + "reviews", {
+        method: "POST",
+        body: JSON.stringify(this.review),
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          this.reviews.push(result);
+        });
+    },
   },
 };
 </script>
@@ -103,7 +142,7 @@ h3 {
 
 .reviews {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
