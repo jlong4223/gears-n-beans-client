@@ -34,11 +34,16 @@
       </form>
     </div>
     <div class="reviews">
-      <div v-for="review in reviews" v-bind:key="review.id">
-        <h4>Name: {{ review.name }}</h4>
-        <h4>Message: {{ review.message }}</h4>
-        <h4>Product: {{ review.product }}</h4>
-        <h4>Rating: {{ review.stars }}</h4>
+      <h2>Reviews:</h2>
+      <div
+        id="oneReview"
+        v-for="review in reversedReviews"
+        v-bind:key="review.id"
+      >
+        <p>Name: {{ review.name }}</p>
+        <p>Message: {{ review.message }}</p>
+        <p>Product: {{ review.product }}</p>
+        <p>Rating: {{ review.stars }}</p>
       </div>
     </div>
   </div>
@@ -60,6 +65,12 @@ export default {
     reviews: [],
     about: "Check out our reviews",
   }),
+  //   using computed to define extra rules to the new copy of reviews data
+  computed: {
+    reversedReviews() {
+      return this.reviews.slice().reverse();
+    },
+  },
   mounted() {
     fetch(BASE_URL + "reviews")
       .then((res) => res.json())
@@ -92,5 +103,15 @@ h3 {
 
 .reviews {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#oneReview {
+  border: 1px solid black;
+  margin: 5px;
+  width: 250px;
+  height: 220px;
 }
 </style>
