@@ -8,7 +8,8 @@
     </div>
     <div>
       <!-- @submit.prevent is preventDefault() -->
-      <form @submit="addReview" class="mb-3">
+      <!-- TODO figure out how to reload the reviews after submit without loading entire page  -->
+      <form @submit.prevent="addReview" class="mb-3">
         <div class="form-group">
           <label for="name">Name</label>
           <input
