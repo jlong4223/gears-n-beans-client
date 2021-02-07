@@ -60,7 +60,8 @@ yarn serve
 
 - Authentication
 - Meet our team page
-- reviews/testimonies page
+- update and edit reviews
+- review page styling
 - Add to cart feature (commerce.js)
 - Message company form (nodemailer)
 - update sizing for phone screens
