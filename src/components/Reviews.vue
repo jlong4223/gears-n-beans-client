@@ -6,11 +6,40 @@
         {{ about }}
       </h3>
     </div>
-    <div v-for="review in reviews" v-bind:key="review.id">
-      <h4>{{ review.name }}</h4>
-      <h4>{{ review.message }}</h4>
-      <h4>{{ review.product }}</h4>
-      <h4>{{ review.stars }}</h4>
+    <div>
+      <form class="mb-3">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Product(s)</label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label></label>
+          <input
+            type="number"
+            max="5"
+            min="1"
+            class="form-control"
+            placeholder="5"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Review</button>
+      </form>
+    </div>
+    <div class="reviews">
+      <div v-for="review in reviews" v-bind:key="review.id">
+        <h4>Name: {{ review.name }}</h4>
+        <h4>Message: {{ review.message }}</h4>
+        <h4>Product: {{ review.product }}</h4>
+        <h4>Rating: {{ review.stars }}</h4>
+      </div>
     </div>
   </div>
   <Footer />
@@ -59,5 +88,9 @@ h3 {
   background-color: transparent;
   color: white;
   font-size: 45px;
+}
+
+.reviews {
+  display: flex;
 }
 </style>
