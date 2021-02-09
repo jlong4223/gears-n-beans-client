@@ -6,50 +6,53 @@
         {{ about }}
       </h3>
     </div>
-    <div>
-      <!-- @submit.prevent is preventDefault() -->
-      <!-- TODO figure out how to reload the reviews after submit without loading entire page  -->
-      <form @submit.prevent="addReview" class="mb-3">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            v-model="review.name"
-            id="name"
-          />
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea
-            class="form-control"
-            v-model="review.message"
-            id="message"
-          ></textarea>
-        </div>
-        <div class="form-group">
-          <label>Product(s)</label>
-          <input
-            type="text"
-            class="form-control"
-            v-model="review.product"
-            id="product"
-          />
-        </div>
-        <div class="form-group">
-          <label>Rating</label>
-          <input
-            type="number"
-            max="5"
-            min="1"
-            class="form-control"
-            placeholder="5"
-            v-model="review.stars"
-            id="stars"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary">Add Review</button>
-      </form>
+    <div id="mainformdiv">
+      <div id="formdiv">
+        <!-- @submit.prevent is preventDefault() -->
+        <!-- TODO figure out how to reload the reviews after submit without loading entire page  -->
+
+        <form @submit.prevent="addReview" class="mb-3">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              v-model="review.name"
+              id="name"
+            />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea
+              class="form-control"
+              v-model="review.message"
+              id="message"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label>Product(s)</label>
+            <input
+              type="text"
+              class="form-control"
+              v-model="review.product"
+              id="product"
+            />
+          </div>
+          <div class="form-group">
+            <label>Rating</label>
+            <input
+              type="number"
+              max="5"
+              min="1"
+              class="form-control"
+              placeholder="5"
+              v-model="review.stars"
+              id="stars"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Add Review</button>
+        </form>
+      </div>
     </div>
     <h2>Reviews:</h2>
     <div class="reviews">
@@ -114,7 +117,15 @@ export default {
       })
         .then((res) => res.json())
         .then((result) => {
-          this.reviews.push(result);
+          if (result.details) {
+            const error = result.details
+              .map((detail) => detail.message)
+              .join(".");
+            this.error = error;
+          } else {
+            this.error = "";
+            this.reviews.push(result);
+          }
         });
     },
   },
@@ -141,17 +152,31 @@ h3 {
   font-size: 45px;
 }
 
+h2 {
+  text-align: center;
+}
+
 .reviews {
   display: flex;
   /* flex-direction: column; */
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
 }
 #oneReview {
   border: 1px solid black;
   margin: 5px;
   width: 250px;
   height: 220px;
+}
+#formdiv {
+  width: 350px;
+}
+#mainformdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 </style>
