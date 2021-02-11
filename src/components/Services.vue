@@ -40,7 +40,7 @@ export default {
     about: "Led by master mechanics, we can repair and build almost any bike.",
   }),
 
-  mounted() {
+  created() {
     fetch(BASE_URL + "services")
       .then((res) => res.json())
       .then((results) => {

@@ -98,7 +98,7 @@ export default {
       return this.reviews.slice().reverse();
     },
   },
-  mounted() {
+  created() {
     fetch(BASE_URL + "reviews")
       .then((res) => res.json())
       .then((results) => {

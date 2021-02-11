@@ -38,7 +38,7 @@ export default {
     error: "",
     products: [],
   }),
-  mounted() {
+  created() {
     fetch(BASE_URL + "products")
       .then((res) => res.json())
       .then((results) => {
