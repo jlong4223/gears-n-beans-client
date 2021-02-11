@@ -14,7 +14,6 @@ VENM Stack project
 - NPM
 - React.js
 - Javascript
-- AJAX
 - CSS3
 - Bootstrap
 - FontAwesome
