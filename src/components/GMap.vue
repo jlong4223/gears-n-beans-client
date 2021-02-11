@@ -20,6 +20,7 @@ export default {
     const mapDivRef = ref(null);
 
     // load in the google script
+    // TODO look into vue hooks mounted on onMounted?
     mounted(() => {
       // key is is the .env file
       //   const key = process.env.VUE_APP_GOOGLEMAPS_KEY;
