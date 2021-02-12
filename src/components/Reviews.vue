@@ -59,12 +59,13 @@
       <div
         id="oneReview"
         v-for="review in reversedReviews"
-        v-bind:key="review.id"
+        v-bind:key="review._id"
       >
         <p>Name: {{ review.name }}</p>
         <p>Message: {{ review.message }}</p>
         <p>Product: {{ review.product }}</p>
         <p>Rating: {{ review.stars }}</p>
+        <button @click="deleteReview(review._id)">Delete</button>
       </div>
     </div>
   </div>
@@ -127,6 +128,14 @@ export default {
             this.reviews.push(result);
           }
         });
+    },
+    async deleteReview(id) {
+      fetch(BASE_URL + `reviews/${id}`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+      });
     },
   },
 };
