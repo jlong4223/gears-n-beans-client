@@ -75,6 +75,8 @@
 <script>
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Vue from "vue";
+
 // const BASE_URL = "https://gearsbeans-api.herokuapp.com/";
 export default {
   name: "Reviews",
@@ -123,6 +125,7 @@ export default {
         (this.review.message = ""),
         (this.review.product = ""),
         (this.review.stars = null);
+      Vue.forceUpdate();
       this.getReviews();
     },
     //   addReview() {
