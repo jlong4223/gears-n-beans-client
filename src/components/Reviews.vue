@@ -75,7 +75,7 @@
 <script>
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-const BASE_URL = "https://gearsbeans-api.herokuapp.com/";
+// const BASE_URL = "https://gearsbeans-api.herokuapp.com/";
 export default {
   name: "Reviews",
   components: {
@@ -84,6 +84,7 @@ export default {
   },
   data: () => ({
     error: "",
+    BASE_URL: "https://gearsbeans-api.herokuapp.com/",
     reviews: [],
     review: {
       name: "",
@@ -99,44 +100,45 @@ export default {
       return this.reviews.slice().reverse();
     },
   },
-  created() {
-    fetch(BASE_URL + "reviews")
-      .then((res) => res.json())
-      .then((results) => {
-        this.reviews = results;
-      });
-  },
   methods: {
-    addReview() {
-      console.log(this.review);
-      fetch(BASE_URL + "reviews", {
-        method: "POST",
-        body: JSON.stringify(this.review),
-        headers: {
-          "content-type": "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .then((result) => {
-          if (result.details) {
-            const error = result.details
-              .map((detail) => detail.message)
-              .join(".");
-            this.error = error;
-          } else {
-            this.error = "";
-            this.reviews.push(result);
-          }
-        });
+    getReviews: async function() {
+      const response = await fetch(this.BASE_URL + "reviews");
+      const data = await response.json();
+      this.reviews = data;
     },
-    async deleteReview(id) {
-      fetch(BASE_URL + `reviews/${id}`, {
-        method: "DELETE",
-        headers: {
-          "content-type": "application/json",
-        },
-      });
-    },
+    //   addReview() {
+    //     console.log(this.review);
+    //     fetch(BASE_URL + "reviews", {
+    //       method: "POST",
+    //       body: JSON.stringify(this.review),
+    //       headers: {
+    //         "content-type": "application/json",
+    //       },
+    //     })
+    //       .then((res) => res.json())
+    //       .then((result) => {
+    //         if (result.details) {
+    //           const error = result.details
+    //             .map((detail) => detail.message)
+    //             .join(".");
+    //           this.error = error;
+    //         } else {
+    //           this.error = "";
+    //           this.reviews.push(result);
+    //         }
+    //       });
+    //   },
+    //   async deleteReview(id) {
+    //     fetch(BASE_URL + `reviews/${id}`, {
+    //       method: "DELETE",
+    //       headers: {
+    //         "content-type": "application/json",
+    //       },
+    //     });
+    //   },
+  },
+  created: function() {
+    this.getReviews();
   },
 };
 </script>
