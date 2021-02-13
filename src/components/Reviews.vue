@@ -11,7 +11,7 @@
         <!-- @submit.prevent is preventDefault() -->
         <!-- TODO figure out how to reload the reviews after submit without loading entire page  -->
 
-        <form @submit.prevent="addReview" class="mb-3">
+        <form v-on:submit.prevent="addReview" class="mb-3">
           <div class="form-group">
             <label for="name">Name</label>
             <input
@@ -105,6 +105,25 @@ export default {
       const response = await fetch(this.BASE_URL + "reviews");
       const data = await response.json();
       this.reviews = data;
+    },
+    addReview: async function() {
+      await fetch(this.BASE_URL + "reviews", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: this.review.name,
+          message: this.review.message,
+          product: this.review.product,
+          stars: this.review.stars,
+        }),
+      });
+      (this.review.name = ""),
+        (this.review.message = ""),
+        (this.review.product = ""),
+        (this.review.stars = null);
+      this.getReviews();
     },
     //   addReview() {
     //     console.log(this.review);
