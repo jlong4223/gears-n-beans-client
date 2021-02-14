@@ -8,9 +8,6 @@
     </div>
     <div id="mainformdiv">
       <div id="formdiv">
-        <!-- @submit.prevent is preventDefault() -->
-        <!-- TODO figure out how to reload the reviews after submit without loading entire page  -->
-
         <form @submit.prevent="addReview" class="mb-3">
           <div class="form-group">
             <label for="name">Name</label>
@@ -19,6 +16,7 @@
               class="form-control"
               v-model="review.name"
               id="name"
+              required
             />
           </div>
           <div class="form-group">
@@ -27,6 +25,7 @@
               class="form-control"
               v-model="review.message"
               id="message"
+              required
             ></textarea>
           </div>
           <div class="form-group">
@@ -36,6 +35,7 @@
               class="form-control"
               v-model="review.product"
               id="product"
+              required
             />
           </div>
           <div class="form-group">
@@ -48,6 +48,7 @@
               placeholder="5"
               v-model="review.stars"
               id="stars"
+              required
             />
           </div>
           <button type="submit" class="btn btn-primary">Add Review</button>
@@ -76,6 +77,7 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 const BASE_URL = "https://gearsbeans-api.herokuapp.com/";
+// const BASE_URL = "http://localhost:3001/";
 export default {
   name: "Reviews",
   components: {
@@ -99,44 +101,44 @@ export default {
       return this.reviews.slice().reverse();
     },
   },
-  created() {
-    fetch(BASE_URL + "reviews")
-      .then((res) => res.json())
-      .then((results) => {
-        this.reviews = results;
-      });
-  },
   methods: {
-    addReview() {
-      console.log(this.review);
-      fetch(BASE_URL + "reviews", {
-        method: "POST",
-        body: JSON.stringify(this.review),
+    getReviews: async function() {
+      const response = await fetch(BASE_URL + "reviews");
+      const data = await response.json();
+      this.reviews = data;
+    },
+    addReview: async function() {
+      await fetch(BASE_URL + "reviews", {
+        method: "post",
         headers: {
-          "content-type": "application/json",
+          "Content-Type": "application/json",
         },
-      })
-        .then((res) => res.json())
-        .then((result) => {
-          if (result.details) {
-            const error = result.details
-              .map((detail) => detail.message)
-              .join(".");
-            this.error = error;
-          } else {
-            this.error = "";
-            this.reviews.push(result);
-          }
-        });
+        body: JSON.stringify({
+          name: this.review.name,
+          message: this.review.message,
+          product: this.review.product,
+          stars: this.review.stars,
+        }),
+      });
+      (this.review.name = ""),
+        (this.review.message = ""),
+        (this.review.product = ""),
+        (this.review.stars = null);
+      // Vue.forceUpdate();
+      this.getReviews();
     },
     async deleteReview(id) {
-      fetch(BASE_URL + `reviews/${id}`, {
+      await fetch(BASE_URL + `reviews/${id}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",
         },
-      });
+      }),
+        this.getReviews();
     },
+  },
+  created: function() {
+    this.getReviews();
   },
 };
 </script>
