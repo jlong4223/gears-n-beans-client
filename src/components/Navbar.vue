@@ -47,4 +47,13 @@ img {
 #mainDiv {
   margin-top: 10px;
 }
+
+@media screen and (max-width: 750px) {
+  img {
+    width: 150px;
+  }
+  .link {
+    font-size: 12px;
+  }
+}
 </style>
