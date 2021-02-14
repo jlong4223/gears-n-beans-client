@@ -75,7 +75,7 @@
 <script>
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import Vue from "vue";
+// import Vue from "vue";
 
 // const BASE_URL = "https://gearsbeans-api.herokuapp.com/";
 export default {
@@ -125,45 +125,21 @@ export default {
         (this.review.message = ""),
         (this.review.product = ""),
         (this.review.stars = null);
-      Vue.forceUpdate();
+      // Vue.forceUpdate();
       this.getReviews();
     },
-    //   addReview() {
-    //     console.log(this.review);
-    //     fetch(BASE_URL + "reviews", {
-    //       method: "POST",
-    //       body: JSON.stringify(this.review),
-    //       headers: {
-    //         "content-type": "application/json",
-    //       },
-    //     })
-    //       .then((res) => res.json())
-    //       .then((result) => {
-    //         if (result.details) {
-    //           const error = result.details
-    //             .map((detail) => detail.message)
-    //             .join(".");
-    //           this.error = error;
-    //         } else {
-    //           this.error = "";
-    //           this.reviews.push(result);
-    //         }
-    //       });
-    //   },
-    //   async deleteReview(id) {
-    //     fetch(BASE_URL + `reviews/${id}`, {
-    //       method: "DELETE",
-    //       headers: {
-    //         "content-type": "application/json",
-    //       },
-    //     });
-    //   },
+    async deleteReview(id) {
+      await fetch(this.BASE_URL + `reviews/${id}`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+      }),
+        this.getReviews();
+    },
   },
   created: function() {
-    let getReviews = this.getReviews();
-    setInterval(function() {
-      getReviews;
-    }, 45000);
+    this.getReviews();
   },
 };
 </script>
