@@ -61,10 +61,8 @@ yarn serve
 - Meet our team page
 - update and edit reviews
 - review page styling
-- figure out reload issue for reviews page
 - Add to cart feature (commerce.js)
 - Message company form (nodemailer)
-- update sizing for phone screens
 - get the google maps API to work properly
   <!-- ### Compiles and minifies for production
 
