@@ -94,4 +94,21 @@ i {
 i:hover {
   color: dodgerblue;
 }
+@media screen and (max-width: 750px) {
+  #homeinfo {
+    flex-direction: column;
+  }
+  #copyright {
+    margin-top: 0px;
+    text-align: center;
+  }
+  #icons {
+    display: flex;
+    justify-content: center;
+  }
+  i {
+    padding: 5px;
+    margin-top: 2px;
+  }
+}
 </style>
