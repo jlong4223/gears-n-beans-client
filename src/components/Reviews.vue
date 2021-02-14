@@ -160,7 +160,10 @@ export default {
     //   },
   },
   created: function() {
-    this.getReviews();
+    let getReviews = this.getReviews();
+    setInterval(function() {
+      getReviews;
+    }, 45000);
   },
 };
 </script>
