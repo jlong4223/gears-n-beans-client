@@ -16,6 +16,7 @@
               class="form-control"
               v-model="review.name"
               id="name"
+              required
             />
           </div>
           <div class="form-group">
@@ -24,6 +25,7 @@
               class="form-control"
               v-model="review.message"
               id="message"
+              required
             ></textarea>
           </div>
           <div class="form-group">
@@ -33,6 +35,7 @@
               class="form-control"
               v-model="review.product"
               id="product"
+              required
             />
           </div>
           <div class="form-group">
@@ -45,6 +48,7 @@
               placeholder="5"
               v-model="review.stars"
               id="stars"
+              required
             />
           </div>
           <button type="submit" class="btn btn-primary">Add Review</button>
