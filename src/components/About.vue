@@ -138,5 +138,19 @@ img {
   .images div {
     margin-top: 10px;
   }
+  #about h2 {
+    font-size: 22px;
+  }
+  #about,
+  #roast {
+    height: 300px;
+  }
+  #roast h3 {
+    font-size: 20px;
+  }
+  h2,
+  h3 {
+    width: 280px;
+  }
 }
 </style>
