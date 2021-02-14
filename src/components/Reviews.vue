@@ -76,6 +76,7 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 const BASE_URL = "https://gearsbeans-api.herokuapp.com/";
+// const BASE_URL = "http://localhost:3001/";
 export default {
   name: "Reviews",
   components: {
@@ -107,9 +108,9 @@ export default {
       });
   },
   methods: {
-    addReview() {
+    async addReview() {
       console.log(this.review);
-      fetch(BASE_URL + "reviews", {
+      await fetch(BASE_URL + "reviews", {
         method: "POST",
         body: JSON.stringify(this.review),
         headers: {
@@ -130,7 +131,7 @@ export default {
         });
     },
     async deleteReview(id) {
-      fetch(BASE_URL + `reviews/${id}`, {
+      await fetch(BASE_URL + `reviews/${id}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",
