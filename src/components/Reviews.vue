@@ -62,10 +62,10 @@
         v-for="review in reversedReviews"
         v-bind:key="review._id"
       >
-        <p>Name: {{ review.name }}</p>
-        <p>Message: {{ review.message }}</p>
-        <p>Product: {{ review.product }}</p>
-        <p>Rating: {{ review.stars }}</p>
+        <p><strong>Name:</strong> {{ review.name }}</p>
+        <p><strong>Message:</strong> {{ review.message }}</p>
+        <p><strong>Product:</strong> {{ review.product }}</p>
+        <p><strong>Rating:</strong> {{ review.stars }}</p>
         <button
           class="btn btn-danger"
           id="deletebtn"
@@ -184,7 +184,7 @@ h2 {
 #oneReview {
   border: 1px solid black;
   margin: 5px;
-  height: 220px;
+  /* height: 220px; */
   box-sizing: border-box;
   width: 300px;
   margin: 0 20px 20px 0;
