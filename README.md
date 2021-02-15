@@ -60,7 +60,6 @@ yarn serve
 - Authentication (firebase)
 - Meet our team page
 - update and edit reviews
-- review page styling
 - Add to cart feature (commerce.js)
 - Message company form (nodemailer)
 - get the google maps API to work properly
