@@ -190,4 +190,13 @@ h2 {
   align-items: center;
   margin-top: 20px;
 }
+@media screen and (max-width: 750px) {
+  h3 {
+    width: 280px;
+    font-size: 20px;
+  }
+  .card_container {
+    height: 300px;
+  }
+}
 </style>
