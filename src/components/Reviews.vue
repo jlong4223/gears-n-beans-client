@@ -190,6 +190,12 @@ h2 {
   align-items: center;
   margin-top: 20px;
 }
+
+textarea {
+  min-height: 30px;
+  max-height: 270px;
+}
+
 @media screen and (max-width: 750px) {
   h3 {
     width: 280px;
