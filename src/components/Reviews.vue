@@ -66,7 +66,13 @@
         <p>Message: {{ review.message }}</p>
         <p>Product: {{ review.product }}</p>
         <p>Rating: {{ review.stars }}</p>
-        <button @click="deleteReview(review._id)">Delete</button>
+        <button
+          class="btn btn-danger"
+          id="deletebtn"
+          @click="deleteReview(review._id)"
+        >
+          X
+        </button>
       </div>
     </div>
   </div>
@@ -178,9 +184,25 @@ h2 {
 #oneReview {
   border: 1px solid black;
   margin: 5px;
-  width: 250px;
   height: 220px;
+  box-sizing: border-box;
+  width: 300px;
+  margin: 0 20px 20px 0;
+  padding: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* text-align: center; */
 }
+#deletebtn {
+  width: 36px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #formdiv {
   width: 350px;
 }
