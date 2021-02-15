@@ -102,4 +102,14 @@ img {
   width: 250px;
   border-radius: 5px;
 }
+
+@media screen and (max-width: 750px) {
+  h3 {
+    width: 280px;
+    font-size: 20px;
+  }
+  .card_container {
+    height: 300px;
+  }
+}
 </style>
