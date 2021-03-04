@@ -19,7 +19,7 @@
           Gears N' Beans <br />
           1111 Beans Dr. <br />
           Austin, TX 78745 <br />
-          (111)-111-1111 <br />
+          <a :href="`tel:567-259-7413`">(111)-111-1111</a> <br />
           <a :href="`mailto:gears@beans.com`">gears@beans.com</a>
         </p>
       </div>
