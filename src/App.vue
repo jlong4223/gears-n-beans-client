@@ -17,7 +17,7 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
