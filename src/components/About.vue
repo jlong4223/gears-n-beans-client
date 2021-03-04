@@ -12,9 +12,9 @@
       by experiencing it and drinking it together.
     </h3>
   </div>
-  <!-- <div>
+  <div id="map">
     <MapHolder />
-  </div> -->
+  </div>
   <div class="images">
     <div>
       <img
@@ -58,11 +58,11 @@
 </template>
 
 <script>
-// import MapHolder from "./MapHolder";
+import MapHolder from "./MapHolder";
 export default {
   name: "About",
   components: {
-    // MapHolder,
+    MapHolder,
   },
 };
 </script>
@@ -129,6 +129,15 @@ img {
 }
 .images div {
   margin: 5px;
+}
+
+#map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width: 750px) {
