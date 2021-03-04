@@ -21,7 +21,7 @@ export default {
 
     // load in the google script
     // TODO look into vue hooks mounted on onMounted?
-    mounted(() => {
+    onMounted(() => {
       // key is is the .env file
       //   const key = process.env.VUE_APP_GOOGLEMAPS_KEY;
 

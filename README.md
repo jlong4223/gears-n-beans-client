@@ -19,6 +19,7 @@ VENM Stack project
 - FontAwesome
 - HTML5
 - Heroku
+- Google Maps
 
 <!-- ### Project setup
 
@@ -62,7 +63,8 @@ yarn serve
 - update and edit reviews
 - Add to cart feature (commerce.js)
 - Message company form (nodemailer)
-- get the google maps API to work properly
+
+<!-- GMap and GMapCopy both work -different ways of doing it -->
   <!-- ### Compiles and minifies for production
 
 ```
