@@ -13,32 +13,23 @@ export default {
     disableUI: Boolean,
   },
   setup(props) {
-    // the google map object
     const map = ref(null);
-
-    // the map element in the templste
     const mapDivRef = ref(null);
 
     // load in the google script
-    // TODO look into vue hooks mounted on onMounted?
     onMounted(() => {
-      // key is is the .env file
-      //   const key = process.env.VUE_APP_GOOGLEMAPS_KEY;
-
-      // create the script element to load
+      const key = process.env.VUE_APP_GOOGLEMAPS_KEY;
+      // create the script element to load the api
       const googleMapScript = document.createElement("SCRIPT");
       googleMapScript.setAttribute(
         "src",
-        "https://maps.googleapis.com/maps/api/js?key=AIzaSyAX2UsD6kMq5dalMOx5_o0cJe_GHRLd_Nw&callback=initMap"
+        `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`
       );
       googleMapScript.setAttribute("defer", "");
       googleMapScript.setAttribute("async", "");
       document.head.appendChild(googleMapScript);
     });
 
-    /**
-     * this function is called as soon as the map is initialized
-     */
     window.initMap = () => {
       map.value = new window.google.maps.Map(mapDivRef.value, {
         mapTypeId: props.mapType || "hybrid",
@@ -60,6 +51,6 @@ export default {
   width: 100%;
   height: 300px;
   background-color: azure;
-  border: 3px solid green;
+  /* border: 3px solid rgb(221, 252, 221); */
 }
 </style>
