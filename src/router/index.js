@@ -6,6 +6,7 @@ import NotFound from "@/components/NotFound.vue";
 import CartCheckout from "@/components/CartCheckout.vue";
 import ThankYou from "@/components/ThankYou.vue";
 import Reviews from "@/components/Reviews.vue";
+import ContactForm from "@/components/ContactForm.vue";
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     path: "/reviews",
     name: "Reviews",
     component: Reviews,
+  },
+  {
+    path: "/contact",
+    name: "ContactForm",
+    component: ContactForm,
   },
   {
     path: "/:catchAll(.*)",
